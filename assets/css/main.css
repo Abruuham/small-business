@@ -24,6 +24,7 @@ html, body {
 	color: white;
 	--step: 32px;
 	overflow-x: hidden;
+	background-color: rgba(7, 7, 7, 1);
 }
 
 h1 {
@@ -268,8 +269,8 @@ nav {
 	border-radius: 100px;
 	rotate: 15deg;
 	filter: blur(16px);
-	top: calc(50% + var(--orb-size));
-	left: calc(-1 * var(--orb-size));
+	top: calc(75% + var(--orb-size));
+	left: calc(-2 * var(--orb-size));
 	mix-blend-mode: plus-lighter;
 	background: linear-gradient(180deg,
 			oklch(0.7206 0.1431 157.57) 0%,
@@ -319,6 +320,10 @@ nav {
 	transition: background 0.3s ease;
 }
 
+.contact-us {
+	box-shadow: oklch(0.8 0.18 157.57 / 0.14) 0px 0px 24px, oklch(0.8 0.18 157.57 / 0.26) 0px 0px 39px, oklch(0.8 0.18 157.57 / 0.26) 0px 0px 60px;
+}
+
 .get-started-button:hover {
 	background: oklch(0.4559 0.1066 157.57) 100%;
 	/* darker blue on hover */
@@ -326,7 +331,6 @@ nav {
 
 .get-started-button:active {
 	transform: scale(0.98);
-	/* slight press effect */
 }
 
 

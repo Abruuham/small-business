@@ -2,6 +2,10 @@
 	font-family: "Nunito Sans", sans-serif;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 :root {
 	--bg-color: rgb(20, 20, 20);
 	--card-color: rgb(23, 23, 23);
@@ -12,14 +16,14 @@
 			transparent 40%);
 }
 
-body {
+html, body {
 	margin: 0;
 	/* background: #050b14; */
 	font-family: system-ui, sans-serif;
 	font-weight: 100;
 	color: white;
 	--step: 32px;
-
+	overflow-x: hidden;
 }
 
 h1 {
@@ -53,7 +57,6 @@ nav {
 }
 
 .content {
-	all: revert;
 	position: relative;
 	z-index: 3;
 	max-width: 800px;
@@ -70,7 +73,14 @@ nav {
 	justify-content: center;
 	background-color: #030303;
 	overflow: hidden;
+	overflow-x: clip;
 	padding-top: 96px;
+}
+
+.hero .content {
+	text-align: center;
+	margin: 0 auto;
+	width: min(800px, 100%);
 }
 
 .navContainer {
@@ -149,7 +159,10 @@ nav {
 
   /* we animate the container height instead */
   .navContainer {
-    --menu-h: 0px;
+    /* --menu-h: 0px; */
+	width: 100%;
+	left: 0;
+	right: 0;
   }
   .navContainer .navMenu {
     max-height: 64px; /* header height when closed */

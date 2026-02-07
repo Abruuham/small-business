@@ -13,7 +13,10 @@ const nav = document.querySelector(".navContainer");
 const btn = document.querySelector(".navToggle");
 
 btn.addEventListener("click", () => {
-  nav.dataset.open = nav.dataset.open === "true" ? "false" : "true";
+  nav.dataset.open = nav.dataset.open === "true";
+  const open = nav.dataset.open === "true";
+  nav.dataset.open = open ? "false" : "true";
+  btn.setAttribute("aria-expanded", String(!open));
 });
 
 nav.querySelectorAll(".navMenu a").forEach(a => {
